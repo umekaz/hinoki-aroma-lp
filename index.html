@@ -7,7 +7,7 @@
 <meta name="description" content="日本のヒノキを主役に、天然精油100%で仕立てたアロマシール。Made in Japan. A Japanese forest, just a sticker away.">
 <meta property="og:title" content="貼るだけアロマ ヒノキブレンド | Aroma Sticker Hinoki Blend">
 <meta property="og:description" content="森の香りを、貼るだけで。A Japanese forest, just a sticker away.">
-<meta property="og:image" content="images/front.jpg">
+<meta property="og:image" content="images/scene-pillow.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Shippori+Mincho:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap">
@@ -25,6 +25,7 @@ html[data-lang="ja"] .en{display:none !important}
 html[data-lang="en"] .ja{display:none !important}
 img{max-width:100%;display:block}
 a{color:var(--gold)}
+p{margin:0}
 .serif{font-family:'Shippori Mincho','Cormorant Garamond',serif}
 .latin{font-family:'Cormorant Garamond',serif}
 .wrap{max-width:1240px;margin:0 auto}
@@ -32,7 +33,7 @@ a{color:var(--gold)}
 .light .eyebrow{color:var(--gold-dark)}
 h1,h2,h3{margin:0;font-family:'Shippori Mincho','Cormorant Garamond',serif;font-weight:500}
 h2{font-size:clamp(28px,3.4vw,44px);line-height:1.55;letter-spacing:.04em;color:var(--ivory-hi)}
-.light h2{color:var(--ink)}
+.light h2,.light h3{color:var(--ink)}
 section{padding:clamp(88px,11vw,160px) 24px}
 .light{background:var(--paper);color:var(--ink)}
 .btn{display:inline-flex;align-items:center;min-height:52px;padding:0 36px;text-decoration:none;font-size:14px;letter-spacing:.16em;transition:background .25s}
@@ -40,7 +41,14 @@ section{padding:clamp(88px,11vw,160px) 24px}
 .btn-gold:hover{background:#E0C590}
 .btn-line{border:1px solid rgba(239,233,220,.45);color:var(--ivory)}
 .btn-line:hover{background:rgba(239,233,220,.08)}
-p{margin:0}
+.lead{max-width:34em;font-size:16px;line-height:2.1;color:var(--muted)}
+.light .lead{color:var(--ink-soft)}
+.small{font-size:13px;line-height:1.9;color:var(--muted2)}
+
+/* reveal on scroll */
+.rv{opacity:0;transform:translateY(24px);transition:opacity 1.1s ease,transform 1.1s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 
 /* header */
 header{position:sticky;top:0;z-index:10;background:rgba(18,28,23,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid rgba(210,180,124,.18)}
@@ -52,7 +60,7 @@ nav a:hover{color:var(--ivory)}
 .lang{display:flex;border:1px solid rgba(210,180,124,.5);border-radius:999px;padding:3px}
 .lang button{min-height:44px;padding:0 18px;border:none;border-radius:999px;background:transparent;color:var(--ivory);font-size:13px;letter-spacing:.08em;cursor:pointer;font-family:inherit}
 .lang button[aria-pressed="true"]{background:var(--gold);color:var(--forest)}
-@media (max-width:760px){nav{display:none}}
+@media (max-width:860px){nav{display:none}}
 
 /* hero */
 .hero{position:relative;padding:clamp(72px,10vw,140px) 24px clamp(80px,10vw,150px)}
@@ -60,30 +68,52 @@ nav a:hover{color:var(--ivory)}
 .hero-in{position:relative;display:flex;flex-wrap:wrap;align-items:center;gap:clamp(48px,6vw,96px)}
 .hero-copy{flex:1 1 480px;min-width:0;display:flex;flex-direction:column;gap:32px}
 .hero h1{font-size:clamp(40px,5.6vw,76px);line-height:1.35;letter-spacing:.04em;color:var(--ivory-hi)}
-.lead{max-width:34em;font-size:16px;line-height:2.1;color:var(--muted)}
 .ctas{display:flex;flex-wrap:wrap;gap:16px;padding-top:8px}
-.hero-img{flex:0 1 400px;min-width:0;display:flex;justify-content:center}
-.frame{position:relative;width:min(100%,380px);padding:28px;border:1px solid rgba(210,180,124,.35)}
-.frame img{width:100%;aspect-ratio:212/308;object-fit:cover}
-.frame .cap{position:absolute;left:28px;bottom:-34px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;letter-spacing:.12em;color:var(--muted2)}
+.hero-img{flex:0 1 460px;min-width:0;display:flex;justify-content:center}
+.frame{position:relative;width:min(100%,460px);padding:24px;border:1px solid rgba(210,180,124,.35)}
+.frame img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.frame .cap{position:absolute;left:24px;bottom:-34px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;letter-spacing:.12em;color:var(--muted2)}
 
-/* story */
-.story{max-width:880px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;gap:36px}
-.story h2{font-size:clamp(28px,3.6vw,46px);line-height:1.6;letter-spacing:.05em}
+/* prologue */
+.prologue{max-width:880px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;gap:36px}
+.prologue h2{font-size:clamp(28px,3.6vw,46px);line-height:1.6;letter-spacing:.05em}
 .vline{width:1px;height:56px;background:#B39A6A}
-.story .body{font-size:16px;line-height:2.3;color:var(--ink-soft)}
+.prologue .body{font-size:16px;line-height:2.4;color:var(--ink-soft)}
+
+/* day intro */
+.day-intro{text-align:center;display:flex;flex-direction:column;align-items:center;gap:24px;padding-bottom:clamp(32px,4vw,56px)}
+.timeline{display:flex;justify-content:center;gap:clamp(16px,4vw,56px);flex-wrap:wrap;margin-top:16px}
+.timeline a{display:flex;flex-direction:column;align-items:center;gap:6px;text-decoration:none;color:var(--muted);min-width:72px;padding:8px 4px}
+.timeline a:hover{color:var(--ivory)}
+.timeline .t{font-family:'Cormorant Garamond',serif;font-size:14px;letter-spacing:.24em;color:var(--gold)}
+.timeline .w{font-family:'Shippori Mincho',serif;font-size:18px;letter-spacing:.1em}
+
+/* chapters */
+.chapter{padding:clamp(56px,7vw,110px) 24px}
+.chapter.alt{background:var(--forest2)}
+.ch{display:flex;flex-wrap:wrap;align-items:center;gap:clamp(40px,6vw,96px)}
+.chapter.flip .ch{flex-direction:row-reverse}
+.ch-img{flex:1 1 560px;min-width:0;position:relative}
+.ch-img img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.ch-img .tag{position:absolute;left:0;bottom:0;transform:translateY(50%);background:var(--gold);color:var(--forest);font-family:'Shippori Mincho',serif;font-size:15px;letter-spacing:.2em;padding:10px 20px}
+.chapter.flip .ch-img .tag{left:auto;right:0}
+.ch-copy{flex:1 1 360px;min-width:0;display:flex;flex-direction:column;gap:24px}
+.ch-no{display:flex;align-items:baseline;gap:16px;font-family:'Cormorant Garamond',serif;color:var(--gold)}
+.ch-no .n{font-size:64px;line-height:1;font-weight:400}
+.ch-no .l{font-size:15px;letter-spacing:.32em}
+.ch-copy h3{font-size:clamp(24px,2.6vw,34px);line-height:1.6;letter-spacing:.05em;color:var(--ivory-hi);white-space:normal}
+.ch-copy .lead{font-size:15.5px}
 
 /* notes */
 .stack{display:flex;flex-direction:column;gap:64px}
-.notes{display:flex;flex-wrap:wrap;border-top:1px solid var(--line)}
-.note{flex:1 1 260px;min-width:0;padding:40px 28px 44px 0;display:flex;flex-direction:column;gap:18px;border-bottom:1px solid var(--line)}
-.note .num{font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:.2em;color:var(--muted2)}
-.note .name{font-family:'Cormorant Garamond',serif;font-size:36px;color:var(--ivory-hi)}
-.note .sub{font-family:'Shippori Mincho',serif;font-size:15px;letter-spacing:.14em;color:var(--gold)}
-.note .desc{font-size:15px;line-height:2;color:var(--muted)}
+.notes{display:flex;flex-wrap:wrap;border-top:1px solid #CFC3A8}
+.note{flex:1 1 260px;min-width:0;padding:40px 28px 44px 0;display:flex;flex-direction:column;gap:18px;border-bottom:1px solid #CFC3A8}
+.note .num{font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:.2em;color:#6E6551}
+.note .name{font-family:'Cormorant Garamond',serif;font-size:36px;color:var(--ink)}
+.note .sub{font-family:'Shippori Mincho',serif;font-size:15px;letter-spacing:.14em;color:var(--gold-dark)}
+.note .desc{font-size:15px;line-height:2;color:var(--ink-soft)}
 
 /* japan */
-.japan{background:var(--forest2)}
 .two{display:flex;flex-wrap:wrap;gap:clamp(48px,6vw,96px)}
 .col-a{flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:24px}
 .col-b{flex:1 1 520px;min-width:0;display:flex;flex-direction:column}
@@ -92,19 +122,28 @@ nav a:hover{color:var(--ivory)}
 .row h3{font-size:24px;letter-spacing:.06em;color:var(--ivory-hi)}
 .row p{font-size:15px;line-height:2;color:var(--muted)}
 .row > div{display:flex;flex-direction:column;gap:12px;min-width:0}
-.back-img{width:min(100%,260px);aspect-ratio:202/308;object-fit:cover;margin-top:16px;border:1px solid var(--line)}
+.back-img{width:min(100%,240px);aspect-ratio:202/308;object-fit:cover;margin-top:16px;border:1px solid var(--line)}
 
-/* use */
-.use{display:flex;flex-wrap:wrap;align-items:center;gap:clamp(48px,6vw,96px)}
-.use-img{flex:0 1 460px;min-width:0}
-.use-img img{width:100%;aspect-ratio:1/1;object-fit:cover}
-.use-copy{flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:40px}
-.step{display:flex;gap:28px;padding:28px 0;border-top:1px solid #CFC3A8}
-.step .n{flex:0 0 48px;font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--gold-dark)}
+/* how to use */
+.use-head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px}
+.icons{background:#FBF8F2;padding:24px;max-width:820px;margin:0 auto;width:100%}
+.icons img{width:100%;height:auto}
+.icon-labels{display:grid;grid-template-columns:repeat(4,1fr);max-width:820px;margin:-8px auto 0;text-align:center;font-family:'Shippori Mincho',serif;font-size:14px;letter-spacing:.1em;color:var(--ink-soft);padding:0 2%}
+.steps{display:flex;flex-wrap:wrap;gap:0 48px}
+.step{flex:1 1 280px;min-width:0;display:flex;gap:24px;padding:28px 0;border-top:1px solid #CFC3A8}
+.step .n{flex:0 0 44px;font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--gold-dark)}
 .step > div{display:flex;flex-direction:column;gap:8px;min-width:0}
-.step h3{font-size:22px;letter-spacing:.06em;color:var(--ink)}
+.step h3{font-size:22px;letter-spacing:.06em}
 .step p{font-size:15px;line-height:2;color:var(--ink-soft)}
-.scenes{font-family:'Shippori Mincho','Cormorant Garamond',serif;font-size:16px;letter-spacing:.12em;color:#5B4520}
+
+/* gift */
+.gift{display:flex;flex-wrap:wrap;align-items:center;gap:clamp(48px,6vw,96px)}
+.gift-img{flex:0 1 380px;min-width:0;display:flex;justify-content:center}
+.gift-img .paper{background:var(--paper);padding:40px;width:min(100%,360px)}
+.gift-img img{width:100%;height:auto}
+.gift-copy{flex:1 1 440px;min-width:0;display:flex;flex-direction:column;gap:24px}
+.gift-uses{display:flex;flex-wrap:wrap;gap:12px}
+.gift-uses span{border:1px solid var(--line);padding:8px 16px;font-size:13px;letter-spacing:.12em;color:var(--muted)}
 
 /* product */
 .prod{display:flex;flex-wrap:wrap;gap:clamp(48px,6vw,96px);align-items:flex-start}
@@ -117,15 +156,18 @@ dl{margin:0;display:flex;flex-direction:column}
 dl > div{display:flex;flex-wrap:wrap;gap:8px 24px;padding:20px 0;border-top:1px solid var(--line)}
 dt{flex:0 0 140px;font-size:13px;letter-spacing:.16em;color:var(--muted2)}
 dd{margin:0;flex:1 1 240px;font-size:15px;line-height:1.9}
-.small{font-size:13px;line-height:1.9;color:var(--muted2)}
 
-/* contact */
+/* epilogue + contact */
+.epilogue{position:relative;padding:0;min-height:clamp(420px,56vw,680px);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.epilogue img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 70%}
+.epilogue::after{content:"";position:absolute;inset:0;background:rgba(13,21,17,.62)}
+.epilogue .in{position:relative;z-index:1;text-align:center;padding:96px 24px;display:flex;flex-direction:column;gap:24px;align-items:center}
+.epilogue h2{font-size:clamp(28px,4vw,52px);line-height:1.6;letter-spacing:.06em}
 .contact{background:var(--night);border-top:1px solid rgba(210,180,124,.2)}
 .contact-in{max-width:760px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;gap:28px}
 .contact h2{font-size:clamp(26px,3.2vw,40px);line-height:1.6;letter-spacing:.05em}
 footer{background:var(--night);border-top:1px solid rgba(210,180,124,.15);padding:40px 24px}
 .foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;font-size:12px;letter-spacing:.16em;color:var(--muted2)}
-.pre{white-space:pre-line}
 </style>
 </head>
 <body>
@@ -134,9 +176,9 @@ footer{background:var(--night);border-top:1px solid rgba(210,180,124,.15);paddin
 <div class="wrap head">
 <a class="logo" href="#top"><span class="serif" style="font-size:26px;letter-spacing:.12em">香</span><span class="latin" style="font-size:20px;letter-spacing:.32em">COU</span></a>
 <nav aria-label="Menu">
+<a href="#day"><span class="ja">ヒノキと過ごす一日</span><span class="en">A day with hinoki</span></a>
 <a href="#scent"><span class="ja">香り</span><span class="en">Scent</span></a>
 <a href="#japan"><span class="ja">日本製</span><span class="en">Made in Japan</span></a>
-<a href="#use"><span class="ja">使い方</span><span class="en">How to use</span></a>
 <a href="#product"><span class="ja">商品</span><span class="en">Product</span></a>
 </nav>
 <div class="lang" role="group" aria-label="Language">
@@ -147,6 +189,7 @@ footer{background:var(--night);border-top:1px solid rgba(210,180,124,.15);paddin
 </header>
 
 <main>
+<!-- HERO -->
 <section id="top" class="hero">
 <svg aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 1440 800"><g fill="none" stroke="#D2B47C" stroke-width="1">
 <path d="M-40 620 C 240 560, 420 700, 720 620 S 1200 520, 1480 600"/>
@@ -158,30 +201,91 @@ footer{background:var(--night);border-top:1px solid rgba(210,180,124,.15);paddin
 <div class="hero-copy">
 <p class="eyebrow">HINOKI BLEND ・ MADE IN JAPAN</p>
 <h1><span class="ja">森の香りを、<br>貼るだけで。</span><span class="en">A Japanese forest,<br>just a sticker away.</span></h1>
-<p class="lead"><span class="ja">日本のヒノキを主役に、天然精油だけで仕立てた小さなアロマシール。マスクに、枕に、名刺入れに。いつでも、森林浴のひとときを。</span><span class="en">A small aroma sticker crafted only from natural essential oils, led by Japanese hinoki. On your mask, your pillow, your card holder: a moment of forest bathing, wherever you are.</span></p>
+<p class="lead"><span class="ja">朝の身支度から、眠りにつくまで。日本のヒノキを主役に、天然精油だけで仕立てた小さなアロマシールが、あなたの一日に森のひと息を届けます。</span><span class="en">From getting dressed in the morning to falling asleep at night, a small aroma sticker made only from natural essential oils, led by Japanese hinoki, brings a breath of forest to your day.</span></p>
 <div class="ctas">
-<a class="btn btn-gold" href="#contact"><span class="ja">購入・お問い合わせ</span><span class="en">Buy or enquire</span></a>
-<a class="btn btn-line" href="#scent"><span class="ja">香りを知る</span><span class="en">Discover the scent</span></a>
+<a class="btn btn-gold" href="#day"><span class="ja">物語を読む</span><span class="en">Read the story</span></a>
+<a class="btn btn-line" href="#contact"><span class="ja">購入・お問い合わせ</span><span class="en">Buy or enquire</span></a>
 </div>
 </div>
 <div class="hero-img"><div class="frame">
-<img src="images/front.jpg" alt="貼るだけアロマ ヒノキブレンドのパッケージ / Aroma Sticker Hinoki Blend package">
+<img src="images/scene-cardcase.jpg" alt="名刺入れの内側に貼ったアロマシール / An aroma sticker inside a card case">
 <p class="cap">Hinoki Blend — 15 stickers</p>
 </div></div>
 </div>
 </section>
 
+<!-- PROLOGUE -->
 <section class="light">
-<div class="story">
-<p class="eyebrow">THE STORY</p>
+<div class="prologue rv">
+<p class="eyebrow">PROLOGUE</p>
 <h2><span class="ja">日本人が、<br>ずっと大切にしてきた香り。</span><span class="en">A scent Japan<br>has cherished for centuries.</span></h2>
 <div class="vline"></div>
-<p class="body"><span class="ja">ヒノキは、古くから神社仏閣の建材や檜風呂に用いられてきた、日本を代表する木。<br>その清らかな香りは、静かな森を歩くひとときを思い出させてくれます。<br>「貼るだけアロマ」は、その香りを毎日の暮らしへ、<br>そっと持ち運ぶためのアロマシールです。</span><span class="en">Hinoki cypress has long been used to build Japanese shrines and temples, and to craft traditional baths.<br>Its clean, calm scent recalls a quiet walk through the forest.<br>Aroma Sticker lets you carry that scent gently into everyday life.</span></p>
+<p class="body"><span class="ja">ヒノキは、古くから神社仏閣の建材や檜風呂に用いられてきた、日本を代表する木。<br>その清らかな香りは、静かな森を歩くひとときを思い出させてくれます。<br>忙しい毎日のなかで、深く息をする時間を。<br>「貼るだけアロマ」は、その香りをそっと持ち運ぶためのアロマシールです。</span><span class="en">Hinoki cypress has long been used to build Japanese shrines and temples, and to craft traditional baths.<br>Its clean, calm scent recalls a quiet walk through the forest.<br>In a busy day, a moment to breathe deeply.<br>Aroma Sticker lets you carry that scent with you, wherever you go.</span></p>
 </div>
 </section>
 
-<section id="scent">
-<div class="wrap stack">
+<!-- A DAY WITH HINOKI -->
+<section id="day" style="padding-bottom:0">
+<div class="wrap day-intro rv">
+<p class="eyebrow">A DAY WITH HINOKI</p>
+<h2><span class="ja">ヒノキと過ごす、ある一日。</span><span class="en">A day, with hinoki.</span></h2>
+<p class="lead" style="text-align:center"><span class="ja">一粒のシールが、どんなふうに一日に寄り添うのか。四つの場面でご紹介します。</span><span class="en">How one small sticker keeps you company through the day, in four moments.</span></p>
+<nav class="timeline" aria-label="Chapters">
+<a href="#ch1"><span class="t">MORNING</span><span class="w"><span class="ja">衣類に</span><span class="en">Clothing</span></span></a>
+<a href="#ch2"><span class="t">DAYTIME</span><span class="w"><span class="ja">マスクに</span><span class="en">Mask</span></span></a>
+<a href="#ch3"><span class="t">MEETING</span><span class="w"><span class="ja">名刺入れに</span><span class="en">Card case</span></span></a>
+<a href="#ch4"><span class="t">NIGHT</span><span class="w"><span class="ja">まくらに</span><span class="en">Pillow</span></span></a>
+</nav>
+</div>
+</section>
+
+<section id="ch1" class="chapter">
+<div class="wrap ch rv">
+<div class="ch-img"><img src="images/scene-clothes.jpg" alt="ジャケットの内側に貼ったアロマシール / An aroma sticker inside a jacket" loading="lazy"><p class="tag"><span class="ja">衣類に</span><span class="en">ON CLOTHING</span></p></div>
+<div class="ch-copy">
+<p class="ch-no"><span class="n">01</span><span class="l">MORNING</span></p>
+<h3><span class="ja">身支度の最後に、<br>上着の内側へ、ひと粒。</span><span class="en">The last step of getting dressed:<br>one sticker inside your jacket.</span></h3>
+<p class="lead"><span class="ja">ネクタイを締め、ジャケットに袖を通す。内側にそっと貼れば、動くたびに、ほのかなヒノキの香り。香水ほど主張せず、自分だけが気づくくらいの、ちょうどいい距離感です。</span><span class="en">Tie on, jacket on. Placed discreetly on the inside, it releases a faint hinoki scent as you move. Subtler than perfume, it is a scent just for you.</span></p>
+</div>
+</div>
+</section>
+
+<section id="ch2" class="chapter alt flip">
+<div class="wrap ch rv">
+<div class="ch-img"><img src="images/scene-mask.jpg" alt="マスクに貼ったアロマシール / An aroma sticker on a face mask" loading="lazy"><p class="tag"><span class="ja">マスクに</span><span class="en">ON A MASK</span></p></div>
+<div class="ch-copy">
+<p class="ch-no"><span class="n">02</span><span class="l">DAYTIME</span></p>
+<h3><span class="ja">長い一日も、<br>呼吸のそばに森がある。</span><span class="en">On the longest days,<br>the forest is never far away.</span></h3>
+<p class="lead"><span class="ja">マスクの外側に貼るだけで、息をするたびに爽やかな香りがふわり。気持ちを切り替えたいとき、少し肩の力を抜きたいときに。働く人の毎日に寄り添います。</span><span class="en">Stick it on the outside of your mask, and a fresh scent rises with every breath. For the moment you need to reset, or simply relax your shoulders. Made for everyday working life.</span></p>
+</div>
+</div>
+</section>
+
+<section id="ch3" class="chapter">
+<div class="wrap ch rv">
+<div class="ch-img"><img src="images/scene-cardcase.jpg" alt="名刺入れの内側に貼ったアロマシール / An aroma sticker inside a card case" loading="lazy"><p class="tag"><span class="ja">名刺入れに</span><span class="en">IN A CARD CASE</span></p></div>
+<div class="ch-copy">
+<p class="ch-no"><span class="n">03</span><span class="l">MEETING</span></p>
+<h3><span class="ja">名刺を差し出すたびに、<br>さりげなく香る。</span><span class="en">Every card you hand over<br>carries a quiet trace of the forest.</span></h3>
+<p class="lead"><span class="ja">名刺入れの内側に貼れば、名刺にもやさしく香りが移ります。はじめての出会いに、言葉より先に伝わる、静かな印象を。</span><span class="en">Placed inside a card case, the scent gently passes onto your cards. A calm first impression that speaks before you do.</span></p>
+</div>
+</div>
+</section>
+
+<section id="ch4" class="chapter alt flip">
+<div class="wrap ch rv">
+<div class="ch-img"><img src="images/scene-pillow.jpg" alt="枕にアロマシールを貼り、眠る女性 / A woman sleeping with an aroma sticker on her pillow" loading="lazy"><p class="tag"><span class="ja">まくらに</span><span class="en">ON A PILLOW</span></p></div>
+<div class="ch-copy">
+<p class="ch-no"><span class="n">04</span><span class="l">NIGHT</span></p>
+<h3><span class="ja">一日の終わりは、<br>檜風呂のような静けさで。</span><span class="en">End the day<br>in the calm of a hinoki bath.</span></h3>
+<p class="lead"><span class="ja">枕の端にひと粒。深く落ち着いた木の香りが、一日の緊張をほどいていきます。目を閉じれば、そこは静かな森の中。</span><span class="en">One sticker at the edge of your pillow. Deep, calming woods help the day’s tension melt away. Close your eyes, and you are in a quiet forest.</span></p>
+</div>
+</div>
+</section>
+
+<!-- SCENT NOTES -->
+<section id="scent" class="light">
+<div class="wrap stack rv">
 <div style="display:flex;flex-direction:column;gap:20px;max-width:720px">
 <p class="eyebrow">SCENT NOTES</p>
 <h2><span class="ja">四つの木が織りなす、奥行きのある香り。</span><span class="en">Four woods, one deep and rounded scent.</span></h2>
@@ -195,13 +299,14 @@ footer{background:var(--night);border-top:1px solid rgba(210,180,124,.15);paddin
 </div>
 </section>
 
-<section id="japan" class="japan">
-<div class="wrap two">
+<!-- MADE IN JAPAN -->
+<section id="japan" style="background:var(--forest2)">
+<div class="wrap two rv">
 <div class="col-a">
 <p class="eyebrow">MADE IN JAPAN</p>
 <h2><span class="ja">日本でつくる、<br>確かな品質。</span><span class="en">Made in Japan,<br>with quality you can trust.</span></h2>
 <p class="lead"><span class="ja">素材を選び、香りを整え、ひとつひとつ丁寧に。小さなシールに、日本のものづくりを込めました。</span><span class="en">Carefully chosen ingredients, a balanced scent and attention to every detail. Japanese craftsmanship, in a small sticker.</span></p>
-<img class="back-img" src="images/back.jpg" alt="パッケージ裏面 / Back of the package, Made in Japan">
+<img class="back-img" src="images/back.jpg" alt="パッケージ裏面 / Back of the package, Made in Japan" loading="lazy">
 </div>
 <div class="col-b">
 <div class="row"><p class="n">01</p><div><h3><span class="ja">国内製造</span><span class="en">Manufactured in Japan</span></h3><p><span class="ja">日本国内で製造。パッケージにも Made in Japan を明記しています。</span><span class="en">Made in Japan, with Made in Japan clearly printed on the package.</span></p></div></div>
@@ -211,29 +316,55 @@ footer{background:var(--night);border-top:1px solid rgba(210,180,124,.15);paddin
 </div>
 </section>
 
+<!-- HOW TO USE -->
 <section id="use" class="light">
-<div class="wrap use">
-<div class="use-img"><img src="images/lifestyle.jpg" alt="枕元でくつろぐ女性 / A woman resting on a pillow"></div>
-<div class="use-copy">
-<div style="display:flex;flex-direction:column;gap:20px">
+<div class="wrap stack rv">
+<div class="use-head">
 <p class="eyebrow">HOW TO USE</p>
 <h2><span class="ja">使い方は、貼るだけ。</span><span class="en">Simply peel and stick.</span></h2>
 </div>
 <div>
-<div class="step"><p class="n">01</p><div><h3><span class="ja">剥がす</span><span class="en">Peel</span></h3><p><span class="ja">シートから、直径15mmのシールを一枚剥がします。</span><span class="en">Peel one 15 mm sticker from the sheet.</span></p></div></div>
-<div class="step"><p class="n">02</p><div><h3><span class="ja">貼る</span><span class="en">Stick</span></h3><p><span class="ja">マスク、衣服、枕、名刺入れなど、お好きな場所へ。</span><span class="en">Place it on a mask, clothing, a pillow or a card holder.</span></p></div></div>
-<div class="step"><p class="n">03</p><div><h3><span class="ja">香る</span><span class="en">Breathe</span></h3><p><span class="ja">ふとした瞬間に、森の香りがやさしく広がります。</span><span class="en">The scent of the forest drifts up in quiet moments.</span></p></div></div>
+<div class="icons"><img src="images/icons.jpg" alt="貼れる場所：衣類、スマートフォンケース、マスク、名刺入れ / Where to stick: clothing, phone case, mask, card case" loading="lazy"></div>
+<div class="icon-labels" aria-hidden="true">
+<span><span class="ja">衣類</span><span class="en">Clothing</span></span>
+<span><span class="ja">スマホケース</span><span class="en">Phone case</span></span>
+<span><span class="ja">マスク</span><span class="en">Mask</span></span>
+<span><span class="ja">名刺入れ</span><span class="en">Card case</span></span>
 </div>
-<p class="scenes"><span class="ja">マスク ・ 衣服 ・ 枕 ・ 名刺入れ ・ 旅先に</span><span class="en">Masks ・ Clothing ・ Pillows ・ Card holders ・ Travel</span></p>
+</div>
+<div class="steps">
+<div class="step"><p class="n">01</p><div><h3><span class="ja">剥がす</span><span class="en">Peel</span></h3><p><span class="ja">シートから、直径15mmのシールを一枚剥がします。</span><span class="en">Peel one 15 mm sticker from the sheet.</span></p></div></div>
+<div class="step"><p class="n">02</p><div><h3><span class="ja">貼る</span><span class="en">Stick</span></h3><p><span class="ja">衣類、マスク、枕、名刺入れなど、お好きな場所へ。</span><span class="en">Place it on clothing, a mask, a pillow or a card case.</span></p></div></div>
+<div class="step"><p class="n">03</p><div><h3><span class="ja">香る</span><span class="en">Breathe</span></h3><p><span class="ja">ふとした瞬間に、森の香りがやさしく広がります。</span><span class="en">The scent of the forest drifts up in quiet moments.</span></p></div></div>
 </div>
 </div>
 </section>
 
-<section id="product">
-<div class="wrap prod">
+<!-- GIFT / ORIGINAL PACKAGE -->
+<section id="gift">
+<div class="wrap gift rv">
+<div class="gift-img"><div class="paper"><img src="images/custom-package.jpg" alt="オリジナルデザインのパッケージ例 / Example of an original package design" loading="lazy"></div></div>
+<div class="gift-copy">
+<p class="eyebrow">FOR GIFTS &amp; OCCASIONS</p>
+<h2><span class="ja">想いを、<br>香りにのせて贈る。</span><span class="en">Send your thoughts,<br>carried on a scent.</span></h2>
+<p class="lead"><span class="ja">周年記念や出版記念、イベントの記念品、サロンの来店ギフトに。オリジナルデザインのパッケージで、感謝の気持ちを森の香りとともにお届けすることもできます。</span><span class="en">For anniversaries, book launches, event keepsakes or salon gifts. Your thanks can also be delivered with the scent of the forest, in an original package design.</span></p>
+<div class="gift-uses">
+<span><span class="ja">企業ノベルティ</span><span class="en">Corporate gifts</span></span>
+<span><span class="ja">記念品</span><span class="en">Keepsakes</span></span>
+<span><span class="ja">イベント景品</span><span class="en">Event giveaways</span></span>
+<span><span class="ja">来店ギフト</span><span class="en">Customer gifts</span></span>
+</div>
+<p class="small"><span class="ja">写真はオリジナルパッケージの制作例です。</span><span class="en">Photo shows an example of an original package.</span></p>
+</div>
+</div>
+</section>
+
+<!-- PRODUCT -->
+<section id="product" style="background:var(--forest2)">
+<div class="wrap prod rv">
 <div class="prod-imgs">
-<img src="images/front.jpg" alt="パッケージ表面 / Package front">
-<img src="images/back.jpg" alt="パッケージ裏面 / Package back">
+<img src="images/front.jpg" alt="パッケージ表面 / Package front" loading="lazy">
+<img src="images/back.jpg" alt="パッケージ裏面 / Package back" loading="lazy">
 </div>
 <div class="prod-copy">
 <div style="display:flex;flex-direction:column;gap:16px">
@@ -247,17 +378,27 @@ footer{background:var(--night);border-top:1px solid rgba(210,180,124,.15);paddin
 <div><dt><span class="ja">パッケージ</span><span class="en">Package</span></dt><dd><span class="ja">チャック付きアルミ袋（約95×145mm）</span><span class="en">Resealable aluminium pouch, approx. 95 × 145 mm</span></dd></div>
 <div><dt><span class="ja">原産国</span><span class="en">Origin</span></dt><dd><span class="ja">日本</span><span class="en">Japan</span></dd></div>
 </dl>
-<p class="small"><span class="ja">ご使用の前に、パッケージ裏面の注意事項をご確認ください。大切な方への小さな贈りものにもおすすめです。</span><span class="en">Please read the precautions on the back of the package before use. Also a thoughtful small gift.</span></p>
+<p class="small"><span class="ja">ご使用の前に、パッケージ裏面の注意事項をご確認ください。</span><span class="en">Please read the precautions on the back of the package before use.</span></p>
 <a class="btn btn-gold" href="#contact" style="align-self:flex-start"><span class="ja">購入・お問い合わせ</span><span class="en">Buy or enquire</span></a>
 </div>
 </div>
 </section>
 
+<!-- EPILOGUE -->
+<section class="epilogue">
+<img src="images/scene-pillow.jpg" alt="" loading="lazy">
+<div class="in rv">
+<p class="eyebrow">EPILOGUE</p>
+<h2><span class="ja">明日もまた、<br>森の香りとともに。</span><span class="en">Tomorrow, too,<br>with the scent of the forest.</span></h2>
+</div>
+</section>
+
+<!-- CONTACT -->
 <section id="contact" class="contact">
-<div class="contact-in">
+<div class="contact-in rv">
 <p class="eyebrow">CONTACT</p>
 <h2><span class="ja">ご購入・お取り扱いのご相談</span><span class="en">Purchase and stockist enquiries</span></h2>
-<p class="lead"><span class="ja">店舗でのお取り扱い、法人ノベルティ、ギフトのご相談も承ります。</span><span class="en">We welcome enquiries from retailers, as well as corporate gift and event orders.</span></p>
+<p class="lead"><span class="ja">店舗でのお取り扱い、法人ノベルティ、オリジナルパッケージのご相談も承ります。</span><span class="en">We welcome enquiries from retailers, as well as corporate gifts and original package orders.</span></p>
 <a class="btn btn-gold" href="mailto:"><span class="ja">メールで問い合わせる</span><span class="en">Email us</span></a>
 <p class="small"><span class="ja">[会社名]　[メールアドレス]</span><span class="en">[Company name]　[Email address]</span></p>
 </div>
@@ -278,6 +419,12 @@ footer{background:var(--night);border-top:1px solid rgba(210,180,124,.15);paddin
   var saved=null;try{saved=localStorage.getItem('lang');}catch(e){}
   var q=new URLSearchParams(location.search).get('lang');
   setLang(q==='en'||q==='ja'?q:(saved||((navigator.language||'').indexOf('ja')===0?'ja':'en')));
+
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12});
+    els.forEach(function(el){io.observe(el);});
+  }else{els.forEach(function(el){el.classList.add('in');});}
 })();
 </script>
 </body>
